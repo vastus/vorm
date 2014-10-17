@@ -44,10 +44,10 @@ class User < Vorm::Model
   end
 
   # callbacks
-  def self.create(*args)
+  def self.create!(*args)
     parent_said = super(args)
     # send email, or whateva
-    SignUpMailer.send_welcome(self.id)
+    SignUpMailer.send_welcome(parent_said.id)
     # return what my mama said
     parent_said
   end
