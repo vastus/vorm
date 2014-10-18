@@ -33,9 +33,6 @@ class User < Vorm::Model
   field 'email'
   field 'phonenumber'
 
-  # or shorthand:
-  fields 'name', 'dob'
-
   # validators
   validate 'email' do |email|
     # field will be passed to block
